@@ -43,9 +43,9 @@ const userLogin = async (req, res) => {
 
   //token assignment
 
-  const token_id = jwt.sign({ _id: user._id }, process.env.SECRET_CODE, "10d");
+  const token_id = jwt.sign({ _id: user._id }, process.env.SECRET_CODE);
 
-  res.headers("authorization", token_id).send(token_id);
+  res.header("authorization", token_id).send(token_id);
 };
 
 module.exports = { addUser, userLogin };

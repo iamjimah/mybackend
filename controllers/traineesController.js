@@ -47,22 +47,19 @@ const updateTrainee = async (req, res) => {
 //DELETE A TRAINEE
 
 const deleteTrainee = async (req, res) => {
-  const foundTrainee = await Trainee.findById(req.params._id)
-  if(foundTrainee){
-    foundTrainee.remove()
-    res.json({ msg: `${foundTrainee.name} removed` })
+  const foundTrainee = await Trainee.findById(req.params._id);
+  if (foundTrainee) {
+    foundTrainee.remove();
+    res.json({ msg: `${foundTrainee.name} removed` });
+  } else {
+    res.status(404).json({ error: "Trainee not found" });
   }
-  else {
-    res.status(404).json({error:"Trainee not found"})
-  }
-  }
-  
-
+};
 
 module.exports = {
   createTrainee,
   getAllTrainees,
   getSingleTrainee,
   updateTrainee,
-  deleteTrainee
+  deleteTrainee,
 };
