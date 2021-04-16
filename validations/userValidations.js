@@ -1,5 +1,5 @@
 const joi = require("joi");
-//validation for refistration
+//validation for registration
 
 const validateAddUser = new joi.object({
   name: joi.string().min(4).required().max(150),
