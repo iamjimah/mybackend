@@ -24,7 +24,7 @@ app.use(morgan("dev"));
 
 //ROUTES
 
-app.use("/api/v1/trainees", traineesRoute);
+app.use("/api/v6/trainees", traineesRoute);
 app.use("/api/v6/users", usersRoute);
 
 //HOME ROUTE
