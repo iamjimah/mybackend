@@ -11,6 +11,7 @@ const traineesRoute = require("./routes/traineesRoute");
 const usersRoute = require("./routes/usersRoute");
 
 dotenv.config();
+const cors = require("cors");
 
 const app = express();
 
@@ -21,6 +22,7 @@ connectDB();
 app.use(express.json());
 
 app.use(morgan("dev"));
+app.use(cors());
 
 //ROUTES
 
